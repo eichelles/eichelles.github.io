@@ -5,20 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background-color: #7e7e7e;
+            background-color: #393f4d;
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
             color: #000;
         }
+
         h1 {
-            color: #000000; /* Set your desired color using a hexadecimal code */
+            color: #000000;
         }
 
+        #sidebar {
+            background-color: #333; /* Sidebar background color */
+            padding: 20px;
+            width: 200px;
+        }
+
+        #content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        /* Style the navigation links */
+        #sidebar a {
+            display: block;
+            padding: 10px 0;
+            color: #fff; /* Link text color */
+            text-decoration: none;
+        }
+
+            /* Change link color on hover */
+            #sidebar a:hover {
+                background-color: #555; /* Hover background color */
+            }
     </style>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <p>I'm hosted with GitHub Pages.</p>
+    <div id="sidebar">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div id="content">
+        <h1>Hello World</h1>
+        <p>I'm hosted with GitHub Pages.</p>
+    </div>
 </body>
 </html>
