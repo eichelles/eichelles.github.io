@@ -8,6 +8,7 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            overflow: hidden; /* Hide the main body's scrollbar */
         }
         body {
             background-color: #393f4d;
@@ -26,11 +27,13 @@
             padding: 20px;
             width: 200px;
             height: 100%;
+            overflow-y: auto;
         }
 
         #content {
             flex-grow: 1;
             padding: 20px;
+            overflow-y: auto;
         }
 
         /* Style the navigation links */
@@ -39,6 +42,7 @@
             padding: 10px 0;
             color: #fff; /* Link text color */
             text-decoration: none;
+            overflow-y: auto;
         }
 
             /* Change link color on hover */
