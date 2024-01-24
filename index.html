@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +8,18 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Hide the main body's scrollbar */
-        }
-        body {
-            background-color: #393f4d;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            color: #000;
+            overflow: hidden;
         }
 
-        h1 {
-            color: #000000;
+        body {
+            background-color: #7e7e7e;
+            font-family: Arial, sans-serif;
+            color: #000;
+            display: flex;
         }
 
         #sidebar {
-            background-color: #333; /* Sidebar background color */
+            background-color: #333;
             padding: 20px;
             width: 200px;
             height: 100%;
@@ -36,29 +32,87 @@
             overflow-y: auto;
         }
 
+        h1 {
+            color: #ff5733;
+        }
+
+        #content p {
+            color: #000;
+        }
+
         /* Style the navigation links */
         #sidebar a {
             display: block;
             padding: 10px 0;
-            color: #fff; /* Link text color */
+            color: #fff;
             text-decoration: none;
+            cursor: pointer; /* Change cursor to indicate clickable */
         }
 
             /* Change link color on hover */
             #sidebar a:hover {
-                background-color: #555; /* Hover background color */
+                background-color: #555;
             }
+
+        /* Style for the modal */
+        #projectModal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 0;
+            z-index: 1;
+        }
+
+        /* Style for the title bar (draggable handle) */
+        #titleBar {
+            background-color: #ddd;
+            padding: 10px;
+            cursor: move; /* Add cursor style for drag */
+            user-select: none; /* Prevent text selection while dragging */
+        }
     </style>
 </head>
 <body>
+    <!-- Sidebar with navigation links -->
     <div id="sidebar">
         <a href="#about">About</a>
-        <a href="#projects">Projects</a>
+        <a href="#" onclick="openModal()">Projects</a>
         <a href="#contact">Contact</a>
     </div>
+
+    <!-- Main content area -->
     <div id="content">
         <h1>Hello World</h1>
-        <p>I'm hosted with GitHub Pages.</p>
+        <p>I'm hosted with GitHub Pages. (Additional content...)</p>
     </div>
+
+    <!-- Modal for projects -->
+    <div id="projectModal">
+        <ul>
+            <li>Stellaria</li>
+            <li>Gecko Party</li>
+            <li>Project 3</li>
+            <!-- Add more projects as needed -->
+        </ul>
+        <button onclick="closeModal()">Close</button>
+    </div>
+
+    <script>
+        let isDragging = false;
+        let offset = { x: 0, y: 0 };
+
+        function openModal() {
+            document.getElementById('projectModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').style.display = 'none';
+        }
+
+       
+    </script>
 </body>
 </html>
